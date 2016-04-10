@@ -10,10 +10,11 @@ import java.sql.Statement;
 import java.io.File;
 
 public class Main {
+    private static Connection conn;
     public static void main(String... args) throws Exception {
         Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         File file = new File("./autostate.derby");
-        Connection conn = DriverManager.getConnection("jdbc:derby:" + file.getAbsolutePath() + ";create=true");
+        conn = DriverManager.getConnection("jdbc:derby:" + file.getAbsolutePath() + ";create=true");
         RatpackServer.start(
             server -> server
             .handlers(chain -> chain
@@ -21,4 +22,5 @@ public class Main {
             )
          );
     }
+
 }

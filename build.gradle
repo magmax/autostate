@@ -1,0 +1,25 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'io.ratpack:ratpack-gradle:1.2.0'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'io.ratpack.ratpack-java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.18'
+    compile 'net.sourceforge.plantuml:plantuml:8038'
+    compile 'org.apache.derby:derby:10.11.1.1'
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = 'org.magmax.autostate.Main'
+version = '0.0.0'
